@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Parallax contact</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <style>
+      body {
+        margin: 0;
+       padding: 0;
+       background-image: url("Z7JQDDiz3_8.jpg");
+       background-size: cover;
+       background-position: center;
+       background-repeat: no-repeat;
+       overflow: hidden;
+        position: relative;
+}
+
+/* Dark overlay */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* Change 0.5 to control darkness */
+  z-index: 0;
+  pointer-events: none; /* lets you click through */
+}
+
+
+
+      /* Container to allow layering */
+      .container {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+      }
+
+      /* Top-left parallax logo */
+      .parallax-logo {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        z-index: 10;
+        width: 150px;
+        opacity: 0.95;
+        transition: transform 0.5s ease;
+        pointer-events: none;
+      }
+
+      /* 3D viewer fullscreen */
+      model-viewer {
+        width: 100vw;
+        height: 100vh;
+      }
+
+      /* Parallax effect on mouse move */
+      .container:hover .parallax-logo {
+        transform: translateY(-2px) translateX(2px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Replace with the real filename -->
+      <img src="Parallax    Creatives.png" alt="Parallax Creatives Logo" class="parallax-logo" />
+
+      <model-viewer
+        src="card 2.glb"
+        environment-image="rogland_clear_night_4k.hdr"
+  
+        camera-controls
+  
+        auto-rotate
+  
+        exposure="4"
+  
+        shadow-intensity="1"
+      ></model-viewer>
+    </div>
+  </body>
+</html>
