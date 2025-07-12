@@ -7,38 +7,35 @@
     <style>
       body {
         margin: 0;
-       padding: 0;
-       background-image: url("Z7JQDDiz3_8.jpg");
-       background-size: cover;
-       background-position: center;
-       background-repeat: no-repeat;
-       overflow: hidden;
+        padding: 0;
+        background-image: url("Z7JQDDiz3_8.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        overflow: hidden;
         position: relative;
-}
+      }
 
-/* Dark overlay */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.6); /* Change 0.5 to control darkness */
-  z-index: 0;
-  pointer-events: none; /* lets you click through */
-}
+      /* Dark overlay */
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: 0;
+        pointer-events: none;
+      }
 
-
-
-      /* Container to allow layering */
       .container {
         position: relative;
         width: 100vw;
         height: 100vh;
       }
 
-      /* Top-left parallax logo */
+      /* Parallax logo styling */
       .parallax-logo {
         position: absolute;
         top: 20px;
@@ -47,7 +44,8 @@ body::before {
         width: 150px;
         opacity: 0.95;
         transition: transform 0.5s ease;
-        pointer-events: none;
+        pointer-events: auto; /* Enable clicking */
+        cursor: pointer;
       }
 
       /* 3D viewer fullscreen */
@@ -64,19 +62,17 @@ body::before {
   </head>
   <body>
     <div class="container">
-      <!-- Replace with the real filename -->
-      <img src="Parallax    Creatives.png" alt="Parallax Creatives Logo" class="parallax-logo" />
+      <!-- Clickable logo linking to the website -->
+      <a href="https://shrivastavsensei.github.io/parallax-creatives-website-/" target="_blank">
+        <img src="Parallax    Creatives.png" alt="Parallax Creatives Logo" class="parallax-logo" />
+      </a>
 
       <model-viewer
         src="card 2.glb"
         environment-image="neutral"
-  
         camera-controls
-  
         auto-rotate
-  
         exposure="2"
-  
         shadow-intensity="1"
       ></model-viewer>
     </div>
